@@ -1,50 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>
-            Fresh Food For All
-        </title>
-        <link rel="stylesheet" href="CS2701-Week4-Registration.css">
-    </head>
-    <body>
-        <header></header>
-        <nav>
-            <!-- ToDo: An unordered list to represent the menu, 
-                       each list item should correspond to the menu items (Home, Register, Login, Help)
-                       The css class of the menu is "navlist"
-                       Check lecture slides about lists, an example of a more basic menu, and CSS class selector-->
-            <ul class="navlist">
-            </ul>
-         </nav>
-        <main>
-            <!-- Check Week 4 Lecture to learn about HTML5 semantic elements-->
-            <aside>
-            </aside>
-            <section>
-                <form class="center" novalidate>
-                <!-- ToDo: Implement the form containing 
-                           Name - type text
-                           email- type text
-                           password - type text
-                           Terms of Service - type checkbox
-                           Register - button
-                           Learn more - link
-                           Check lecture slides and the links on the slides to learn about forms
-                           and how to create a button that would react to a click Event
-                        -->
-                    <!-- Example given for user type checkboxes-->
-                    
-                    <input type="checkbox" id="buyer" name="buyer" value="buyer">
-                    <label for="buyer">I want to buy produce directly from allotment owners.</label><br>
-                    <input type="checkbox" id="seller" name="seller" value="seller">
-                    <label for="seller">I want to sell produce from my allotment.</label><br><br>
+<head>
+    <title>Fresh Food For All - Hedgehog Fan Page</title>
+    <link rel="stylesheet" href="CS2701-Week4-Registration.css">
+</head>
+<body>
+    <header>
+        <h1>Hedgehog Webpage</h1>
+    </header>
 
-                    <br><br>
-                </form>
-                <div class="center" id="hiddenSection">
-                    <p id="hiddenParagraph"></p>
-                </div>
-            </section>
-        </main>
-    </body>
+    <nav>
+        <!-- Navigation Menu -->
+        <ul class="navlist">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Register</a></li>
+            <li><a href="#">Login</a></li>
+            <li><a href="#">Help</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <aside>
+            <!-- Optional sidebar content (e.g., hedgehog fun facts or links) -->
+        </aside>
+
+        <section>
+            <!-- Hedgehog facts and gallery could go here -->
+            <article>
+                <h2>Fun Facts About Hedgehogs</h2>
+                <p>Hedgehogs are nocturnal creatures known for their distinctive spines and cute little snouts.</p>
+                <p>They can roll into a tight ball to protect themselves from predators.</p>
+                <p>There are 17 species of hedgehogs found across Europe, Asia, and Africa.</p>
+            </article>
+
+            <article>
+                <h2>Hedgehog Art Gallery</h2>
+                <p>(Insert images or artwork of hedgehogs here)</p>
+            </article>
+
+            <!-- Hedgehog Fan Club Form -->
+            <form class="center" action="/submit_form" method="post" novalidate>
+                <h2>Join the Hedgehog Fan Club!</h2>
+
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" name="password" required><br><br>
+
+                <label for="favourite">Favourite Hedgehog Species:</label><br>
+                <input type="text" id="favourite" name="favourite"><br><br>
+
+                <label for="message">Why do you love hedgehogs?</label><br>
+                <textarea id="message" name="message" rows="4" cols="40"></textarea><br><br>
+
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">I agree to the Terms of Service.</label><br><br>
+
+                <input type="submit" value="Register">
+                <br><br>
+
+                <a href="#">Learn more</a>
+
+                <hr>
+
+                <!-- Example checkboxes from your previous form -->
+                <input type="checkbox" id="buyer" name="buyer" value="buyer">
+                <label for="buyer">I want to buy produce directly from allotment owners.</label><br>
+
+                <input type="checkbox" id="seller" name="seller" value="seller">
+                <label for="seller">I want to sell produce from my allotment.</label><br><br>
+            </form>
+
+            <div class="center" id="hiddenSection">
+                <p id="hiddenParagraph"></p>
+            </div>
+        </section>
+    </main>
+</body>
 </html>
