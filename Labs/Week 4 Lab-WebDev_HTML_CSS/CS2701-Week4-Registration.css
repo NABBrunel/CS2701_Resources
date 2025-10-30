@@ -1,113 +1,108 @@
-body{
-    font-family: "Lato", sans-serif;
-    max-width: 75rem;
-    margin: auto;
-    height: 100vh;
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-header{
-    background-image:url(SharingFood.jpg);
-    background-repeat: repeat;
-    background-size: contain;
-    background-position: center;
-    height:200px;
-    width: 100%;
-    margin: auto;
+.hero {
+  height: 120px;
+  background-image: url("SharingFood.jpg");
+  background-repeat: repeat-x;
+  background-position: center;
+  background-size: auto 120px;
 }
 
-/**** Menu Style *****************************************/
 nav {
-    border-bottom: 1px solid black;
+  background-color: #3a3a3a;
+  padding: 12px 16px;
 }
 
-ul.navlist{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
+.navlist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  width: 100%;
 }
 
-ul.navlist li
-{
-    float: left;
-    display: inline;
+.navlist li {
+  display: inline-block;
+  margin-right: 28px;
 }
 
-ul.navlist li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+.navlist a {
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: normal;
 }
 
-ul.navlist li a:hover {
-    background-color: #111;
+.wrap {
+  display: flex;
+  gap: 50px;
+  padding: 20px;
 }
 
-/**** Styling for main part */
-
-main {
-    border-bottom: 0.5rem solid;
-    box-sizing: border-box;
-    /*ToDo: Make this a flexible container; 
-    You can find the following helpful: display, flex-wrap, width, min-height, height
-    See lecture slides*/
+.sidebar {
+  width: 360px;
+  min-height: 560px;
+  background: #dcdcd6;
+  padding: 10px;
 }
 
-section, aside {
-    padding: 0.5rem;
-    box-sizing: border-box;
-    min-height: 100%;
+.sidebar input[type="text"] {
+  width: 220px;
+  padding: 4px;
+  border: 1px solid #bdbdbd;
 }
 
-aside {
-    /*ToDo: Set width.ToDo: For fluid layouts, use min-width, max-width, and set to relative 
-   values, like 25% of the page.*/ 
-    background-color: #deded8;
+main section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-section {
-    /*ToDo: Set width. For fluid layouts, use min-width, max-width, and set to relative 
-   values, like 75% of the page.*/
+.box {
+  width: 440px;
+  background: #fff;
+  border: 3px solid #2b7a2b;
+  border-bottom: none;
+  padding: 20px;
 }
 
-/*Styling for search in aside*/
-.search{
-    display: block;
-    width: auto;
-    text-align: left;
+.box input[type="text"] {
+  width: 170px;
+  padding: 4px;
+  border: 1px solid #bdbdbd;
 }
 
-.center {
-    /*ToDo: Styling for centered elements
-    You can use margin, width useful to center.
-    */
-    border: 3px solid green;
-    padding: 10px;
-  }
-
-/* Styling for text inputs in the form*/
-.textInput {
-    display: block;
-    width: auto;
-    text-align: left;
+button {
+  background: #e0e0e0;
+  color: #333;
+  border: 1px solid #9e9e9e;
+  padding: 3px 7px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: normal;
 }
 
-/*Styling with a media query*/
-@media screen and (max-width: 700px) {
-    /* ToDo: Style aside and section so that they take 100% width on small screens*/
-    aside {
-    
-    }
-    
-    section {
- 
-    }
+button:hover {
+  background: #d7d7d7;
+}
 
-    #hiddenSection{
-        overflow-wrap: break-word;
-    }
+.learn {
+  color: #5b5bb0;
+  text-decoration: underline;
+  font-size: 14px;
+}
 
+.box-thin {
+  width: 440px;
+  height: 22px;
+  border-left: 3px solid #2b7a2b;
+  border-right: 3px solid #2b7a2b;
+  border-bottom: 3px solid #2b7a2b;
+  border-top: none;
+  background: transparent;
+  margin-top: 0;
 }
