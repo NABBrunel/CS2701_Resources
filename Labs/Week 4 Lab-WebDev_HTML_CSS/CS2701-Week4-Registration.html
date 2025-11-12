@@ -9,11 +9,21 @@
     <body>
         <header></header>
         <nav>
+          
+
             <!-- ToDo: An unordered list to represent the menu, 
                        each list item should correspond to the menu items (Home, Register, Login, Help)
                        The css class of the menu is "navlist"
                        Check lecture slides about lists, an example of a more basic menu, and CSS class selector-->
             <ul class="navlist">
+                <li><a href="Home">Home</a></li>
+                <li><a href="Register">Register</a></li>
+                <li><a href="Login">Login</a></li>
+                <li><a href="Help">Help</a></li>
+
+                
+
+
             </ul>
          </nav>
         <main>
@@ -22,6 +32,28 @@
             </aside>
             <section>
                 <form class="center" novalidate>
+                <label for ="name" >Name:</label><br>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for ="email" >Email:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for ="password" >Password:</label><br>
+                <input type="text" id="password" name="password" required><br><br>
+                <input type="button" id="button" value="Register" onclick="submitform()" ><br><br>
+                
+
+
+                
+                <p><a href="Learn More">Learn More</a> </p>
+                <p><a href="Terms of Service">Terms of Service</a></p>
+
+
+
+
+
+
+    
                 <!-- ToDo: Implement the form containing 
                            Name - type text
                            email- type text
