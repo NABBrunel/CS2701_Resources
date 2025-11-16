@@ -75,11 +75,18 @@ function submitForm(){
     readForm();
     validateForm();
     if (formValid){
-        var formText = formData.username +" registered as:\n";
-        formText += formData.buyer?"buyer\n":"";
-        formText += formData.seller?"seller":"";
+        var formText =
+        "Form Submitted Successfully!" +
+        "Name: " + formData.username + "" +
+        "Email: " + formData.email + "";
 
-        console.log(formText);
-        createNewParagraph(formText);
+        alert(formText);
+
+        //optional (Uodates age with a success message)
+        var successText = formData.username + "Registered as:";
+        successText += formData.buyer ? "buyer" : "";
+        successText += formData.seller ? "seller" : "";
+
+        createNewParagraph(successText);
     }
 }
