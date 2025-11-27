@@ -2,7 +2,8 @@ body{
     font-family: "Lato", sans-serif;
     max-width: 75rem;
     margin: auto;
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
 }
 
 header{
@@ -26,12 +27,13 @@ ul.navlist{
     padding: 0;
     overflow: hidden;
     background-color: #333;
+    display: flex; /* use flexbox for predictable reading order and responsiveness */
+    align-items: center;
 }
 
 ul.navlist li
 {
-    float: left;
-    display: inline;
+    float: none; /* remove float; layout handled by flexbox on the UL */
 }
 
 ul.navlist li a {
@@ -53,7 +55,7 @@ main {
     flex-direction: row;
     flex-wrap: wrap;
     box-sizing: border-box;
-    border-bottom: 0.5rem solid;
+    border-bottom: 0.5rem solid #ddd;
     width: 100%;
     min-height: 100%;
     height: auto;
@@ -111,3 +113,91 @@ section {
         overflow-wrap: break-word;
     }
 }
+ /* --- START: Fixes for Accessibility (Activity 2) & Layout --- */
+
+/* === Accessibility improvements: focus, controls, nav, reduced-motion === */
+
+/* High-contrast, visible focus for keyboard users (use :focus-visible when available) */
+a:focus-visible, button:focus-visible, input:focus-visible,
+textarea:focus-visible, select:focus-visible {
+    outline: 3px solid #005A9C;
+    outline-offset: 3px;
+}
+/* Fallback for browsers without :focus-visible */
+a:focus, button:focus, input:focus, textarea:focus, select:focus {
+    outline: 3px solid #005A9C;
+    outline-offset: 3px;
+}
+
+/* Ensure links are visually discoverable (not just color) */
+section a, a {
+    color: #005A9C;
+    font-weight: 700;
+    text-decoration: underline;
+}
+section a:hover, section a:focus-visible, a:hover, a:focus-visible {
+    text-decoration: none;
+}
+
+/* Replace float-based nav behavior with flexbox (UL already set to display:flex above) */
+ul.navlist li a:focus, ul.navlist li a:focus-visible {
+    background-color: #111;
+}
+
+/* Ensure form controls are consistently styled and large enough for touch */
+input[type="text"], input[type="email"], input[type="password"],
+textarea, button, input[type="submit"], input[type="button"] {
+    padding: .5rem .75rem;
+    font-size: 1rem;
+    min-height: 44px; /* recommended minimum target size */
+    box-sizing: border-box;
+}
+
+/* Avoid 100vh clipping on mobile devices */
+body { min-height: 100vh; height: auto; }
+
+/* Explicit border color to avoid relying on currentColor */
+main { border-bottom: .5rem solid #ddd; }
+
+/* Skip-link styling (requires adding a skip link in the HTML: <a class="skip-link" href="#main">Skip to content</a>) */
+.skip-link {
+    position: absolute;
+    left: -999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+.skip-link:focus, .skip-link:focus-visible {
+    left: 8px;
+    top: 8px;
+    width: auto;
+    height: auto;
+    padding: .5rem 1rem;
+    background: #fff;
+    color: #000;
+    z-index: 1000;
+    border: 2px solid #005A9C;
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Consolidated mobile rules */
+@media screen and (max-width: 700px) {
+    main { flex-direction: column; }
+    aside { min-width: 100%; width: 100%; }
+    section { min-width: 100%; width: 100%; }
+    #hiddenSection { overflow-wrap: break-word; }
+    /* Slightly boost tap targets on mobile */
+    ul.navlist li a { padding: 16px 18px; }
+}
+
+/* --- END: Fixes --- */
