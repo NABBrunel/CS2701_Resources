@@ -54,6 +54,8 @@ main {
     /*ToDo: Make this a flexible container; 
     You can find the following helpful: display, flex-wrap, width, min-height, height
     See lecture slides*/
+    display: flex;
+    flex-wrap: wrap; 
 }
 
 section, aside {
@@ -64,13 +66,15 @@ section, aside {
 
 aside {
     /*ToDo: Set width.ToDo: For fluid layouts, use min-width, max-width, and set to relative 
-   values, like 25% of the page.*/ 
+    values, like 25% of the page.*/ 
+    width: 25%;
     background-color: #deded8;
 }
 
 section {
     /*ToDo: Set width. For fluid layouts, use min-width, max-width, and set to relative 
-   values, like 75% of the page.*/
+    values, like 75% of the page.*/
+    width: 75%;
 }
 
 /*Styling for search in aside*/
@@ -78,32 +82,44 @@ section {
     display: block;
     width: auto;
     text-align: left;
+    padding: 10px;
 }
+
+/* Added this selector to style the search box itself */
+.search input[type="text"] {
+    width: 90%;
+    padding: 8px;
+}
+
 
 .center {
     /*ToDo: Styling for centered elements
     You can use margin, width useful to center.
     */
+    max-width: 500px;
+    margin: 0 auto;
     border: 3px solid green;
     padding: 10px;
-  }
+ }
 
 /* Styling for text inputs in the form*/
 .textInput {
     display: block;
-    width: auto;
+    width: 90%;
     text-align: left;
+    padding: 8px;
+    margin-bottom: 10px;
 }
 
 /*Styling with a media query*/
 @media screen and (max-width: 700px) {
     /* ToDo: Style aside and section so that they take 100% width on small screens*/
     aside {
-    
+        width: 100%;
     }
     
     section {
- 
+        width: 100%;
     }
 
     #hiddenSection{
