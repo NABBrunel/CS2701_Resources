@@ -8,7 +8,7 @@ var formData = {
     password: "",
     buyer: false,
     seller: false
-}
+} //this is to test
 
 //This data will be read but not be sent as part of the form submission
 var formValid= false;
