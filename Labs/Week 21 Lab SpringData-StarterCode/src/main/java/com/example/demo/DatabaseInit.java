@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 
 @Component
-public class DatabaseInit implements CommandLineRunner{
+public class Databaseinit implements CommandLineRunner{
 	@Autowired 
 	private UserRepository userRepository;
 	
