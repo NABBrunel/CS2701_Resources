@@ -1,0 +1,172 @@
+:root {
+  /* Light mode */
+  --bg: #fdf6f0;
+  --card: #f3e3d2;
+  --text: #000;
+  --muted: #5c4b3c;
+  --accent: #bfa17a;
+  --border: #d8c7af;
+  --overlay-light: rgba(255,255,255,0.6);
+
+  /* Dark mode overrides */
+  --bg-dark: #3a2f24;
+  --card-dark: #2b1f17;
+  --overlay-dark: rgba(0,0,0,0.6);
+}
+
+/* Body dark mode toggle */
+body.dark-mode {
+  background-color: var(--bg-dark);
+  color: var(--text);
+}
+
+body.dark-mode .modal,
+body.dark-mode .videos-page {
+  background-color: var(--card-dark);
+}
+
+/* Videos Page Layout */
+.videos-page {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background: var(--bg);
+}
+
+.videos-container {
+  margin: 0 auto;
+  width: 50%;
+  height: 100%;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+.video-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  scroll-snap-align: start;
+}
+
+.tiktok-video {
+  max-height: 80vh;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+}
+
+.video-info {
+  margin-top: 10px;
+  text-align: center;
+  color: var(--text);
+  font-weight: bold;
+}
+
+/* Add Video Button */
+.add-video-button {
+  position: fixed;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.add-video-button button {
+  padding: 10px 15px;
+  background: var(--accent);
+  border: none;
+  color: var(--text);
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.add-video-button button:hover {
+  background-color: #a5885f;
+}
+
+/* Upload Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: var(--card);
+  padding: 20px;
+  border-radius: 10px;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.modal h3 {
+  margin: 0 0 10px 0;
+  color: var(--text);
+  text-align: center;
+}
+
+.modal input[type="file"],
+.modal input[type="text"] {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  width: 100%;
+  background-color: var(--bg);
+  color: var(--text);
+  outline: none;
+  cursor: pointer;
+  transition: border 0.2s ease;
+}
+
+.modal input[type="file"]:hover,
+.modal input[type="text"]:hover {
+  border-color: var(--accent);
+}
+
+.modal input[type="text"]:focus {
+  border-color: var(--accent);
+}
+
+/* Modal Buttons */
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.modal-actions button {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s ease;
+}
+
+.modal-actions button:first-child {
+  background-color: #e63946;
+  color: #fff;
+}
+
+.modal-actions button:first-child:hover {
+  opacity: 0.85;
+}
+
+.modal-actions button:last-child {
+  background-color: var(--accent);
+  color: var(--text);
+}
+
+.modal-actions button:last-child:hover {
+  background-color: #a5885f;
+}
