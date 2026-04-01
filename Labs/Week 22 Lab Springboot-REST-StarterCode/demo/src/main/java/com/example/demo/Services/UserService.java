@@ -25,8 +25,8 @@ public class UserService {
 		return (List<User>) userRepository.findAll();
 	}
 
-	public void addUser(User newUser) {
-		userRepository.save(newUser);
+	public User addUser(User newUser) {
+		return userRepository.save(newUser);
 	}
 	
 	public Optional<User> findByID(Long id) {

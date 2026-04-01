@@ -15,6 +15,7 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 
@@ -38,6 +39,12 @@ public class User implements Serializable {
 	
 	@NotBlank
 	String password;
+
+	@OneToMany(mappedBy = "buyer")
+	private java.util.List<Order> orders;
+
+	@OneToMany(mappedBy = "seller")
+	private java.util.List<SellerProduce> SellerProduces;
 	
 	@Enumerated(EnumType.STRING) // Stores the enum as a string in the database
 	@Column(nullable = false)
@@ -52,6 +59,7 @@ public class User implements Serializable {
 	@LastModifiedDate
 	private Date updatedAt;
 	
+	private String role;
 	
 	 public User() {
 			super();
@@ -114,7 +122,29 @@ public class User implements Serializable {
 		this.userType = userType;
 	}
 
+	public java.util.List<Order> getOrders() {
+		return orders;
+	}
 
+	public void setOrders(java.util.List<Order> orders) {
+		this.orders = orders;
+	}
+
+	public java.util.List<SellerProduce> getSellerProduces() {
+		return SellerProduces;
+	}
+
+	public void setSellerProduces(java.util.List<SellerProduce> sellerProduces) {
+		SellerProduces = sellerProduces;
+	}
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
 
 	@Override
 	public String toString() {
