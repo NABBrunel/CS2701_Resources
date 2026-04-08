@@ -1,113 +1,141 @@
-body{
-    font-family: "Lato", sans-serif;
-    max-width: 75rem;
-    margin: auto;
-    height: 100vh;
+/* Reset and base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-header{
-    background-image:url(SharingFood.jpg);
-    background-repeat: repeat;
-    background-size: contain;
-    background-position: center;
-    height:200px;
-    width: 100%;
-    margin: auto;
+body {
+  background: #f4f6f8;
+  color: #333;
 }
 
-/**** Menu Style *****************************************/
-nav {
-    border-bottom: 1px solid black;
+/* Header */
+header {
+  background: #4caf50;
+  color: white;
+  text-align: center;
+  padding: 1.5rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-ul.navlist{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
+header h1 {
+  margin-bottom: 0.5rem;
 }
 
-ul.navlist li
-{
-    float: left;
-    display: inline;
+/* Navigation */
+.navlist {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  background: #388e3c;
 }
 
-ul.navlist li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+.navlist li {
+  margin: 0;
 }
 
-ul.navlist li a:hover {
-    background-color: #111;
+.navlist a {
+  display: block;
+  padding: 0.8rem 1.5rem;
+  color: white;
+  text-decoration: none;
 }
 
-/**** Styling for main part */
+.navlist a:hover {
+  background: #2e7d32;
+}
 
+/* Main layout */
 main {
-    border-bottom: 0.5rem solid;
-    box-sizing: border-box;
-    /*ToDo: Make this a flexible container; 
-    You can find the following helpful: display, flex-wrap, width, min-height, height
-    See lecture slides*/
-}
-
-section, aside {
-    padding: 0.5rem;
-    box-sizing: border-box;
-    min-height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 2rem auto;
+  width: 90%;
+  max-width: 900px;
+  gap: 2rem;
 }
 
 aside {
-    /*ToDo: Set width.ToDo: For fluid layouts, use min-width, max-width, and set to relative 
-   values, like 25% of the page.*/ 
-    background-color: #deded8;
+  flex: 1 1 40%;
+}
+
+/* Image Styling */
+.food-image {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
 section {
-    /*ToDo: Set width. For fluid layouts, use min-width, max-width, and set to relative 
-   values, like 75% of the page.*/
+  flex: 1 1 50%;
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/*Styling for search in aside*/
-.search{
-    display: block;
-    width: auto;
-    text-align: left;
+section h2 {
+  margin-bottom: 1rem;
+  color: #4caf50;
 }
 
-.center {
-    /*ToDo: Styling for centered elements
-    You can use margin, width useful to center.
-    */
-    border: 3px solid green;
-    padding: 10px;
+/* Form */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+input[type="checkbox"] {
+  margin-right: 0.5rem;
+}
+
+button {
+  background: #4caf50;
+  color: white;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #388e3c;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  background: #eee;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  main {
+    flex-direction: column;
+    align-items: center;
   }
 
-/* Styling for text inputs in the form*/
-.textInput {
-    display: block;
-    width: auto;
-    text-align: left;
-}
-
-/*Styling with a media query*/
-@media screen and (max-width: 700px) {
-    /* ToDo: Style aside and section so that they take 100% width on small screens*/
-    aside {
-    
-    }
-    
-    section {
- 
-    }
-
-    #hiddenSection{
-        overflow-wrap: break-word;
-    }
-
+  aside,
+  section {
+    width: 100%;
+  }
 }
