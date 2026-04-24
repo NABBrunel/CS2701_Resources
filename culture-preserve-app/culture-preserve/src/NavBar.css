@@ -1,0 +1,50 @@
+nav {
+width: 100%;
+background-color: var(--card);
+display: flex;
+justify-content: center;
+padding: 12px 0;
+border-radius: 8px;
+margin-bottom: 20px;
+box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+transition: all 0.3s ease;
+position: sticky;
+top: 0;
+z-index: 500;
+}
+
+
+nav ul {
+list-style: none;
+display: flex;
+gap: 20px;
+padding: 0;
+margin: 0;
+}
+
+
+nav ul li a, nav ul li button {
+text-decoration: none;
+color: var(--text);
+font-weight: 500;
+padding: 6px 12px;
+border-radius: 6px;
+transition: background 0.2s ease, color 0.2s ease;
+cursor: pointer;
+border: none;
+background-color: var(--accent);
+}
+
+
+nav ul li a:hover, nav ul li button:hover {
+background-color: var(--btn-hover);
+}
+
+
+@media (max-width: 600px) {
+nav ul {
+flex-direction: column;
+gap: 10px;
+align-items: center;
+}
+}

@@ -1,0 +1,341 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Main container */
+.form {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Form title */
+.form h2 {
+    text-align: center;
+    color: #4a5568;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+/* Labels */
+.labelText {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #4a5568;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* Input fields */
+.form input[type="email"],
+.form input[type="password"],
+.form input[type="text"] {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.form input[type="email"]:focus,
+.form input[type="password"]:focus,
+.form input[type="text"]:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Select dropdown */
+.form select {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    color: #4a5568;
+}
+
+.form select:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Submit button */
+.form input[type="submit"] {
+    width: 100%;
+    padding: 0.75rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 0.5rem;
+}
+
+.form input[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.form input[type="submit"]:active {
+    transform: translateY(0);
+}
+
+/* Login link section */
+.login-link {
+    text-align: center;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e2e8f0;
+}
+
+.login-link a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 0.5rem;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+.login-link p {
+    color: #718096;
+    font-size: 0.9rem;
+}
+
+/* Error message styling */
+.error-message {
+    background-color: #fed7d7;
+    color: #c53030;
+    padding: 0.75rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    text-align: center;
+    border-left: 4px solid #c53030;
+}
+
+/* Success message styling */
+.success-message {
+    background-color: #c6f6d5;
+    color: #276749;
+    padding: 0.75rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    text-align: center;
+    border-left: 4px solid #276749;
+}
+
+/* Password requirements section */
+.password-requirements {
+    font-size: 0.8rem;
+    color: #718096;
+    margin-top: -0.5rem;
+    margin-bottom: 1rem;
+    padding-left: 0.5rem;
+}
+
+.password-requirements ul {
+    margin-top: 0.25rem;
+    padding-left: 1.5rem;
+}
+
+.password-requirements li {
+    margin: 0.25rem 0;
+}
+
+/* Terms and conditions checkbox */
+.terms-section {
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.terms-section input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+    cursor: pointer;
+}
+
+.terms-section label {
+    color: #4a5568;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.terms-section a {
+    color: #667eea;
+    text-decoration: none;
+}
+
+.terms-section a:hover {
+    text-decoration: underline;
+}
+
+/* Dark Mode Support */
+.dark-mode .form {
+    background: #2d3748;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .form h2 {
+    color: #e2e8f0;
+}
+
+.dark-mode .labelText {
+    color: #cbd5e0;
+}
+
+.dark-mode .form input[type="email"],
+.dark-mode .form input[type="password"],
+.dark-mode .form input[type="text"] {
+    background: #1a202c;
+    border-color: #4a5568;
+    color: #e2e8f0;
+}
+
+.dark-mode .form input[type="email"]:focus,
+.dark-mode .form input[type="password"]:focus,
+.dark-mode .form input[type="text"]:focus {
+    border-color: #667eea;
+    background: #1a202c;
+}
+
+.dark-mode .form select {
+    background: #1a202c;
+    border-color: #4a5568;
+    color: #e2e8f0;
+}
+
+.dark-mode .form select option {
+    background: #1a202c;
+    color: #e2e8f0;
+}
+
+.dark-mode .login-link {
+    border-top-color: #4a5568;
+}
+
+.dark-mode .login-link p {
+    color: #a0aec0;
+}
+
+.dark-mode .password-requirements {
+    color: #a0aec0;
+}
+
+.dark-mode .terms-section label {
+    color: #cbd5e0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .form {
+        margin: 1rem;
+        padding: 1.5rem;
+        max-width: none;
+    }
+    
+    .form h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .form input[type="email"],
+    .form input[type="password"],
+    .form input[type="text"],
+    .form select {
+        padding: 0.6rem;
+        font-size: 0.9rem;
+    }
+    
+    .form input[type="submit"] {
+        padding: 0.6rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .form {
+        margin: 0.5rem;
+        padding: 1rem;
+    }
+    
+    .form h2 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+    
+    .labelText {
+        font-size: 0.85rem;
+    }
+    
+    .password-requirements {
+        font-size: 0.7rem;
+    }
+}
+
+/* Animation for form appearance */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Radio button group for user type (alternative to dropdown) */
+.radio-group {
+    margin-bottom: 1rem;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+.radio-label input[type="radio"] {
+    width: auto;
+    margin: 0;
+    cursor: pointer;
+}
+
+.radio-label span {
+    color: #4a5568;
+}
+
+.dark-mode .radio-label span {
+    color: #cbd5e0;
+}
