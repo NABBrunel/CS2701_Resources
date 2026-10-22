@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <title>
-            Fresh Food For All
+            Food for the homeless
         </title>
         <link rel="stylesheet" href="CS2701-Week4-Registration.css">
     </head>
@@ -22,24 +22,31 @@
             </aside>
             <section>
                 <form class="center" novalidate>
-                <!-- ToDo: Implement the form containing 
-                           Name - type text
-                           email- type text
-                           password - type text
-                           Terms of Service - type checkbox
-                           Register - button
-                           Learn more - link
-                           Check lecture slides and the links on the slides to learn about forms
-                           and how to create a button that would react to a click Event
-                        -->
-                    <!-- Example given for user type checkboxes-->
-                    
-                    <input type="checkbox" id="buyer" name="buyer" value="buyer">
-                    <label for="buyer">I want to buy produce directly from allotment owners.</label><br>
-                    <input type="checkbox" id="seller" name="seller" value="seller">
-                    <label for="seller">I want to sell produce from my allotment.</label><br><br>
+                    <label for="name">Name:</label><br>
+                    <input type="text" id="name" name="name"><br>
 
-                    <br><br>
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email"><br>
+
+                    <label for="password">Password:</label><br>
+                    <input type="password" id="password" name="password"><br>
+
+                    <label for="passwordConfirmation">Re-type password:</label><br>
+                    <input type="password" id="passwordConfirmation" name="passwordConfirmation"><br>
+
+                    <input type="checkbox">
+                    <label for="alottmentBuy">I want to buy produce directly from the allotment owners</label><br>
+
+                    <input type="checkbox">
+                    <label for="alottmentSell">I want to sell produce from my allotment</label><br>
+
+                    <br>
+
+                    <input type="checkbox">
+                    <label for="agree">I agree to the <a href="https://en.wikipedia.org/wiki/Terms_of_service">Terms of Use</a> and <a href="https://en.wikipedia.org/wiki/Privacy_policy">Privacy Policy</a></label><br>
+
+                    <input type="submit">
+                    <label for="learnMore"><a href="https://en.wikipedia.org/wiki/Main_Page">Learn more</a></label>
                 </form>
                 <div class="center" id="hiddenSection">
                     <p id="hiddenParagraph"></p>
