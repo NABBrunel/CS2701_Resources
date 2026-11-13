@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Lato", sans-serif;
+  background-color: white;
+  color: #222;
+}
+
+#root {
+  width: 100%;
+  max-width: 75rem;
+  min-height: 100vh;
+  margin: 0 auto;
+}
+
+input,
+button {
+  font: inherit;
+}

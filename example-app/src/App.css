@@ -1,0 +1,85 @@
+/* Banner */
+header {
+  width: 100%;
+  height: 200px;
+}
+
+header img {
+  display: block;
+}
+
+/* Sidebar and form area */
+main {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  min-height: calc(100vh - 200px);
+  border-bottom: 0.5rem solid #222;
+}
+
+aside,
+section {
+  padding: 0.5rem;
+}
+
+aside {
+  flex: 0 0 25%;
+  background-color: #deded8;
+}
+
+section {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Search field */
+.search {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+/* Green form border */
+.center {
+  width: 100%;
+  max-width: 28rem;
+  margin: 0 auto;
+  border: 3px solid green;
+  padding: 10px;
+}
+
+/* Labels above text fields */
+.textInput {
+  display: block;
+  text-align: left;
+}
+
+.center input[type="text"],
+.center input[type="email"],
+.center input[type="password"] {
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.center button {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+/* Stack sidebar above form on smaller screens */
+@media screen and (max-width: 700px) {
+  main {
+    flex-direction: column;
+  }
+
+  aside {
+    flex: auto;
+    width: 100%;
+  }
+
+  section {
+    width: 100%;
+  }
+}
